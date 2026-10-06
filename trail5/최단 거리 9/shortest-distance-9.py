@@ -28,7 +28,7 @@ def dijkstra(n, graph, start, end):
                 path[next_node] = curr
                 heapq.heappush(min_heap, (new_dist, next_node))
 
-    return dist[end], path
+    return dist, path
 
 graph = {i: [] for i in range(1, n + 1)}
 for u, v, w in edges:
@@ -36,7 +36,7 @@ for u, v, w in edges:
     graph[v].append((w, u))
 
 dist, path = dijkstra(n, graph, A, B)
-print(dist)
+print(dist[B])
 
 x = B
 vertices = []
