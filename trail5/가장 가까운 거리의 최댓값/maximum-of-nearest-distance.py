@@ -38,4 +38,12 @@ for u, v, w in edges:
     graph[v].append((w, u))
 
 dist = dijkstra(n, graph)
-print(max(dist[1:]))
+
+max_dist = -1
+for node in range(1, n + 1):
+    if node in (a, b, c):
+        continue
+    if dist[node] != INF:
+        max_dist = max(max_dist, dist[node])
+
+print(max_dist)
