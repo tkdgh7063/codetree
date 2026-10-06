@@ -16,7 +16,7 @@ def dijkstra(n, graph, start=1):
     while min_heap:
         current_dist, curr = heapq.heappop(min_heap)
 
-        if dist[curr] > current_dist:
+        if dist[curr] < current_dist:
             continue
 
         for w, next_node in graph[curr]:
