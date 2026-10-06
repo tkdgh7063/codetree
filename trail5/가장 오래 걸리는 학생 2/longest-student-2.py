@@ -32,4 +32,6 @@ for i, j, d in edges:
     graph[j].append((d, i))
 
 dist = dijkstra(n, graph, n)
-print(max(dist))
+
+answer = [d for d in dist if d != float('inf')]
+print(max(answer))
