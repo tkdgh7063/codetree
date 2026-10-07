@@ -42,6 +42,6 @@ max_time = -1
 for i in range(n):
     for j in range(n):
         dist = dijkstra(n, grid, (i, j))
-        for row in dist:
-            max_time = max(max_time, max(row))
+        max_in_dist = max(max(row) for row in dist)
+        max_time = max(max_time, max_in_dist)
 print(max_time)
