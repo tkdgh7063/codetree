@@ -17,10 +17,11 @@ def dijkstra(n, grid, start):
 
     startX, startY = start
     dist[startX][startY] = 0
-    heapq.heappush(min_heap, (0, (startX, startY), grid[startX][startY]))
+    heapq.heappush(min_heap, (0, (startX, startY)))
 
     while min_heap:
-        current_time, (curr_x, curr_y), curr_char = heapq.heappop(min_heap)
+        current_time, (curr_x, curr_y) = heapq.heappop(min_heap)
+        curr_char = grid[curr_x][curr_y]
 
         if dist[curr_x][curr_y] < current_time:
             continue
@@ -33,7 +34,7 @@ def dijkstra(n, grid, start):
                 new_time = current_time + a if curr_char == new_char else current_time + b
                 if new_time < dist[next_x][next_y]:
                     dist[next_x][next_y] = new_time
-                    heapq.heappush(min_heap, (new_time, (next_x, next_y), new_char))
+                    heapq.heappush(min_heap, (new_time, (next_x, next_y)))
 
     return dist
 
