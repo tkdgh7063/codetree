@@ -41,13 +41,8 @@ for start in range(1, N + 1):
     if start == red1 or start == red2:
         continue
 
-    total_dist = 0
-    # start -> red1 -> red2 -> start
-    red1_first_dist = dist1[start] + dist1[red2] + dist2[start]
-    # start -> red2 -> red1 -> start
-    red2_first_dist = dist2[start] + dist2[red1] + dist1[start]
-
-    min_dist = min(min_dist, red1_first_dist, red2_first_dist)
+    total_dist = dist1[start] + dist1[red2] + dist2[start]
+    min_dist = min(min_dist, total_dist)
 
 if min_dist == INF:
     sys.stdout.write('-1')
