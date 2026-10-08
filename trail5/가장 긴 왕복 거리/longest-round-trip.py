@@ -40,9 +40,7 @@ dist_from_X = dijkstra(N, graph, X)
 dist_to_X = dijkstra(N, graph_reverse, X)
 max_dist = -1
 for start in range(1, N + 1):
-    if start == X:
-        continue
     total_dist = dist_to_X[start] + dist_from_X[start]
     max_dist = max(max_dist, total_dist)
 
-print(max_dist)
+sys.stdout.write(str(max_dist))
