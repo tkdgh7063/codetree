@@ -41,6 +41,9 @@ for start in range(1, N + 1):
     if start == red1 or start == red2:
         continue
 
+    if dist1[start] == INF or dist1[red2] == INF or dist2[start] == INF:
+        continue
+
     total_dist = dist1[start] + dist1[red2] + dist2[start]
     min_dist = min(min_dist, total_dist)
 
