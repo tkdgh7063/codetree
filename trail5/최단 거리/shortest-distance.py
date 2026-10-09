@@ -1,6 +1,7 @@
 import sys
 
 input = sys.stdin.readline
+print = sys.stdout.write
 
 N, M = map(int, input().split())
 graph = [list(map(int, input().split())) for _ in range(N)]
@@ -12,4 +13,4 @@ for k in range(N):
             graph[i][j] = min(graph[i][j], graph[i][k] + graph[k][j])
 
 for start, end in queries:
-    sys.stdout.write(str(graph[start - 1][end - 1]) + "\n")
+    print(str(graph[start - 1][end - 1]) + "\n")
