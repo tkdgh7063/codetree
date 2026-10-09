@@ -22,7 +22,7 @@ for k in range(1, n + 1):
 
 answer = INF
 for start in range(1, n + 1):
-    for end in range(1, n + 1):
+    for end in range(start + 1, n + 1):
         new_dist = graph[start][end] + graph[end][start]
         answer = min(answer, new_dist)
 
