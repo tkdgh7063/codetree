@@ -24,18 +24,18 @@ for x, y, w in edges:
 
 for k in range(N):
     for i in range(N):
+        if dist[i][k] == INF:
+            continue
         for j in range(N):
             dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
 
 total_dist = 0
 total_cnt = 0
 for x, y in pairs:
-    distance = INF
     x, y = x - 1, y - 1
-    for r in range(P + 1):
-        distance = min(distance, dist[x][r] + dist[r][y])
+    distance = min(dist[x][r] + dist[r][y] for r in range(P + 1))
     if distance != INF:
         total_cnt += 1
         total_dist += distance
 
-print(str(total_cnt) + "\n" + str(total_dist))
+print(f"{total_cnt}\n{total_dist}")
