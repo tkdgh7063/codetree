@@ -4,16 +4,12 @@ input = sys.stdin.readline
 print = sys.stdout.write
 
 N, K = map(int, input().split())
-square = [list(map(int, input().split())) for _ in range(N)]
+square = [[0] + list(map(int, input().split())) for _ in range(N)]
 
 grid = [[0] * (N + 1)]
 prefix_sum = [[0] * (N + 1) for _ in range(N + 1)]
 
-for row in square:
-    l = [0]
-    for e in row:
-        l.append(e)
-    grid.append(l)
+grid += square
 
 for i in range(1, N + 1):
     for j in range(1, N + 1):
