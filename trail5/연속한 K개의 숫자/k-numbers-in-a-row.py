@@ -14,4 +14,4 @@ for i in range(1, N - K + 1):
     s = s - all_nums[i - 1] + all_nums[i + K - 1]
     answer = max(answer, s)
 
-print(str(K - answer))
+print(str(K - answer) + '\n')
