@@ -18,7 +18,5 @@ for i in range(1, N + 1):
 for a, b in queries:
     a = max(0, a) - 1
     b = min(b, N + 1)
-    for row in range(3):
-        res = prefix_sum[row][b] - prefix_sum[row][a]
-        print(res, end=" ")
-    print()
+    res = [prefix_sum[row][b] - prefix_sum[row][a] for row in range(3)]
+    print(*res)
