@@ -5,7 +5,7 @@ input = sys.stdin.readline
 def solve():
     N, Q = map(int, input().split())
     arr = list(map(int, input().split()))
-    queries = [tuple(map(int, input().split())) for _ in range(Q)]
+    section = [tuple(map(int, input().split())) for _ in range(Q)]
 
     L = [0] * N
     L[0] = arr[0]
@@ -17,17 +17,12 @@ def solve():
     for i in range(N - 2, -1, -1):
         R[i] = max(R[i + 1], arr[i])
 
-    for a, b in queries:
+    for a, b in section:
         answer = -float('inf')
-        a -= 1
-        b -= 1
-        if a > 0:
-            answer = max(answer, L[a - 1])
-
-        if b < N - 1:
-            answer = max(answer, R[b + 1])
-
+        a, b = a - 1, b - 1
+        answer = max(L[a - 1], R[b + 1])
         print(answer)
+
 
 if __name__ == '__main__':
     solve()
