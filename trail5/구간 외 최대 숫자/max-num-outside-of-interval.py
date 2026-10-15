@@ -1,6 +1,7 @@
 import sys
 
 input = sys.stdin.readline
+print = sys.stdout.write
 
 def solve():
     N, Q = map(int, input().split())
@@ -21,7 +22,7 @@ def solve():
         answer = -float('inf')
         a, b = a - 1, b - 1
         answer = max(L[a - 1], R[b + 1])
-        print(answer)
+        print(str(answer) + '\n')
 
 
 if __name__ == '__main__':
