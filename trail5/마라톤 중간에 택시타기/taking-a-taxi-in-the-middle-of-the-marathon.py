@@ -1,6 +1,7 @@
 import sys
 
 input = sys.stdin.readline
+print = sys.stdout.write
 
 def get_dist(p1, p2):
     x1, y1 = p1
@@ -28,7 +29,7 @@ def solve():
         dist = L_arr[i - 1] + R_arr[i + 1] + get_dist(points[i - 1], points[i + 1])
         answer = min(dist, answer)
 
-    print(answer)
+    print(str(answer) + "\n")
 
 if __name__ == '__main__':
     solve()
