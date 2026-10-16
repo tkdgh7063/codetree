@@ -8,14 +8,13 @@ def solve():
     intervals = [tuple(map(int, input().split())) for _ in range(N)]
 
     points = []
-    M = -1
     for x1, x2 in intervals:
         points.append((x1, 1))
         points.append((x2, -1))
-        M = max(M, x2)
-    points.sort()
 
-    answer = -1
+    points.sort(key=lambda x: (x[0], -x[1]))
+
+    answer = 0
     sum_val = 0
     for _, v in points:
         sum_val += v
