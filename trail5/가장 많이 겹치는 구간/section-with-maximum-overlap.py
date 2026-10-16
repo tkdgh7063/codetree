@@ -17,7 +17,7 @@ def solve():
 
     answer = -1
     sum_val = 0
-    for x, v in points:
+    for _, v in points:
         sum_val += v
 
         answer = max(sum_val, answer)
