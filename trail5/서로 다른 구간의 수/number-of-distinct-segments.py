@@ -12,7 +12,7 @@ def solve():
         points.append((a, +1, idx))
         points.append((b, -1, idx))
 
-    points.sort()
+    points.sort(lambda x: (x[0], -x[1], x[2]))
 
     segs = set()
     cnt = 0
