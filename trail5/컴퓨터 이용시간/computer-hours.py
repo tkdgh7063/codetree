@@ -2,7 +2,7 @@ import sys
 import heapq
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
