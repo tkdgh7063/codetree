@@ -5,25 +5,23 @@ print = sys.stdout.write
 
 def solve():
     N, K = map(int, input().split())
-    M = []
-    dirs = []
 
+    cur = 0
+    points = []
     for _ in range(N):
         m, d = input().split()
-        M.append(int(m))
-        dirs.append(d)
+        m = int(m)
+        if d == "L":
+            nxt = cur - m
+            points.append((nxt, +1))
+            points.append((cur, -1))
 
-    points = []
-    cur = 0
-    for m, dir in zip(M, dirs):
-        if dir == "L":
-            points.append((cur, -1))
-            cur -= m
-            points.append((cur, +1))
         else:
+            nxt = cur + m
             points.append((cur, +1))
-            cur += m
-            points.append((cur, -1))
+            points.append((nxt, -1))
+
+        cur = nxt
 
     points.sort(key=lambda x: (x[0], x[1]))
 
