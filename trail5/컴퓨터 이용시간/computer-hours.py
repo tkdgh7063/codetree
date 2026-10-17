@@ -16,9 +16,14 @@ def solve():
 
     answer = [None] * N
     computer_map = dict()
-    computer_num = [i for i in range(1, 100001)]
+    computer_num = []
+    next_num = 1
     for x, v, idx in points:
         if v == +1:
+            if not computer_num:
+                heapq.heappush(computer_num, next_num)
+                next_num += 1
+
             num = heapq.heappop(computer_num)
             computer_map[idx] = num  # 사용자 번호: 컴퓨터 번호
         else:
@@ -26,7 +31,7 @@ def solve():
             answer[idx] = num
             heapq.heappush(computer_num, num)
 
-    print(*answer)
+    print(*(answer), sep=' ')
 
 if __name__ == "__main__":
     solve()
