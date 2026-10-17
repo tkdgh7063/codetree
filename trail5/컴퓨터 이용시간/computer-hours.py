@@ -31,7 +31,7 @@ def solve():
             answer[idx] = num
             heapq.heappush(computer_num, num)
 
-    print(*(answer), sep=' ')
+    print(' '.join(map(str, answer)))
 
 if __name__ == "__main__":
     solve()
