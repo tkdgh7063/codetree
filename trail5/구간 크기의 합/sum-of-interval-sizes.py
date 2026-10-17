@@ -1,6 +1,7 @@
 import sys
 
 input = sys.stdin.readline
+print = sys.stdout.write
 
 def solve():
     n = int(input())
@@ -23,7 +24,7 @@ def solve():
             prev_x = x
         sum_val += v
 
-    print(answer)
+    print(str(answer))
 
 if __name__ == "__main__":
     solve()
