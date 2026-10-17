@@ -1,19 +1,25 @@
-n = int(input())
-intervals = [tuple(map(int, input().split())) for _ in range(n)]
-s = [interval[0] for interval in intervals]
-e = [interval[1] for interval in intervals]
+import sys
 
-# Please write your code here.
-points = []
-for a, b in intervals:
-    points.append((a, +1))
-    points.append((b, -1))
-points.sort(key=lambda x: (x[0], -x[1]))
+input = sys.stdin.readline
+print = sys.stdout.write
 
-sum_val = 0
-answer = 0
-for x, v in points:
-    sum_val += v
-    answer = max(sum_val, answer)
+def solve():
+    n = int(input())
+    intervals = [tuple(map(int, input().split())) for _ in range(n)]
 
-print(answer)
+    points = []
+    for a, b in intervals:
+        points.append((a, +1))
+        points.append((b, -1))
+    points.sort(key=lambda x: (x[0], -x[1]))
+
+    sum_val = 0
+    answer = 0
+    for x, v in points:
+        sum_val += v
+        answer = max(sum_val, answer)
+
+    print(str(answer) + "\n")
+
+if __name__ == "__main__":
+    solve()
