@@ -25,7 +25,7 @@ def solve():
             cur += m
             points.append((cur, -1))
 
-    points.sort(key=lambda x: (x[0], -x[1]))
+    points.sort(key=lambda x: (x[0], x[1]))
 
     sum_val = 0
     s = set()
