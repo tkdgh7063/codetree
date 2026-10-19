@@ -1,6 +1,7 @@
 import sys
 
 input = sys.stdin.readline
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -16,7 +17,7 @@ def solve():
     answer = 0
     for i in range(N - 1):
         answer += energy[i] * R[i]
-    print(answer)
+    print(str(answer))
 
 if __name__ == "__main__":
     solve()
