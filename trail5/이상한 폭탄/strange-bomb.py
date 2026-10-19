@@ -12,9 +12,8 @@ def solve():
         num = bombs[i]
 
         if num in dists.keys():
-            R[i] = abs(dists.pop(num) - i)
-        else:
-            dists[num] = i
+            R[i] = abs(dists[num] - i)
+        dists[num] = i
 
     answer = -float('inf')
     for idx, val in enumerate(R):
