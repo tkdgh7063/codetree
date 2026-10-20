@@ -1,34 +1,25 @@
 import sys
 
 input = sys.stdin.readline
+print = sys.stdout.write
 
 def solve():
     N, S = map(int, input().split())
-    arr = list(map(int, input().split()))
+    nums = list(map(int, input().split()))
 
-    min_length = float('inf')
-    current_sum = 0
-    right = 0
+    answer = float('inf')
+    j = 0
+    sum_val = 0
+    for i in range(N):
+        while j < N and sum_val < S:
+            sum_val += nums[j]
+            j += 1
+        if sum_val >= S:
+            answer = min(answer, j - i)
 
-    # left를 하나씩 옮겨가며 투 포인터 진행
-    for left in range(N):
-        # 현재 부분합이 S보다 작고, right가 끝에 도달하지 않았다면 오른쪽으로 확장
-        while current_sum < S and right < N:
-            current_sum += arr[right]
-            right += 1
+        sum_val -= nums[i]
 
-        # 만약 합이 S 이상을 만족했다면, 길이 측정 및 갱신
-        if current_sum >= S:
-            min_length = min(min_length, right - left)
-
-        # left를 한 칸 오른쪽으로 밀기 전에, 현재 left 위치의 값을 합에서 제외
-        current_sum -= arr[left]
-
-    # 만약 조건을 만족하는 구간이 없었다면 -1 출력
-    if min_length == float('inf'):
-        print(-1)
-    else:
-        print(min_length)
+    print(str(answer) if answer != float('inf') else '-1')
 
 if __name__ == "__main__":
     solve()
