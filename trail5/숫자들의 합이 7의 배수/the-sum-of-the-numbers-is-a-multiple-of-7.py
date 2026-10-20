@@ -5,24 +5,21 @@ print = sys.stdout.write
 
 def solve():
     N = int(input())
-    nums = [int(input()) for _ in range(N)]
 
-    remainder = [0] * N
-    remainder[0] = nums[0] % 7
-    for i in range(1, N):
-        remainder[i] = (remainder[i - 1] + nums[i]) % 7
-
-    R = dict()
     answer = 0
+    current_remainder = 0
+    first_index = [-1] * 7
     for i in range(N):
-        n = remainder[i]
-        if n == 0:
+        num = int(input())
+        current_remainder = (current_remainder + num) % 7
+
+        if current_remainder == 0:
             answer = max(answer, i + 1)
         else:
-            if n in R:
-                answer = max(answer, i - R[n])
+            if first_index[current_remainder] == -1:
+                first_index[current_remainder] = i
             else:
-                R[n] = i
+                answer = max(answer, i - first_index[current_remainder])
 
     print(str(answer))
 
