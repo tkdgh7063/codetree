@@ -17,6 +17,8 @@ def solve():
             print("No")
             return
 
+        i += 1
+
     print("Yes")
     return
 
