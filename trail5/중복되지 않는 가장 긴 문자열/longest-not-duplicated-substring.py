@@ -6,15 +6,15 @@ print = sys.stdout.write
 def solve():
     s = input().strip()
 
-    p = ""
+    p = set()
     j = 0
     answer = 0
     for i in range(len(s)):
         while j < len(s) and s[j] not in p:
-            p += s[j]
+            p.add(s[j])
             j += 1
 
-        p = p[1:]
+        p.remove(s[i])
         answer = max(answer, j - i)
 
     print(str(answer) + "\n")
