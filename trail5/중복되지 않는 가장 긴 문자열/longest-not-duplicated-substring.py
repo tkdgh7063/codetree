@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     s = input().strip()
@@ -15,10 +15,9 @@ def solve():
             j += 1
 
         p = p[1:]
-
         answer = max(answer, j - i)
 
-    print(answer)
+    print(str(answer) + "\n")
 
 if __name__ == "__main__":
     solve()
