@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N, K = map(int, input().split())
@@ -22,7 +22,10 @@ def solve():
         if nums[i] == 1:
             count -= 1
 
-    print(answer if answer != float('inf') else -1)
+    if answer == float('inf'):
+        print("-1\n")
+    else:
+        print(str(answer) + '\n')
 
 if __name__ == "__main__":
     solve()
