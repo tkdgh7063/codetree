@@ -16,7 +16,7 @@ def solve():
                 count += 1
             j += 1
 
-        if count == K:
+        if count >= K:
             answer = min(answer, j - i)
 
         if nums[i] == 1:
