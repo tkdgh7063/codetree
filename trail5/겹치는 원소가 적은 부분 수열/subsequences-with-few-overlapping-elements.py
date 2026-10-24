@@ -1,8 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
-
+print = sys.stdout.write
 
 def solve():
     N, K = map(int, input().split())
@@ -24,7 +23,7 @@ def solve():
 
         answer = max(answer, j - i + 1)
 
-    print(answer)
+    print(str(answer) + "\n")
 
 if __name__ == "__main__":
     solve()
