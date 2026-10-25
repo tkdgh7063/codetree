@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def binary_search(nums, target):
     N = len(nums)
@@ -28,7 +28,7 @@ def solve():
 
     for query in queries:
         idx = binary_search(nums, query)
-        print(idx)
+        print(f"{idx}\n")
 
     return
 
