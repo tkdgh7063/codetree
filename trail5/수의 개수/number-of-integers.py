@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def get_lower(nums, target):
     N = len(nums)
@@ -47,7 +47,7 @@ def solve():
     for query in queries:
         upper_bound = get_upper(nums, query)
         lower_bound = get_lower(nums, query)
-        print(upper_bound - lower_bound)
+        print(str(upper_bound - lower_bound) + "\n")
 
     return
 
