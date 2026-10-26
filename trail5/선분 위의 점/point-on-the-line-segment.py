@@ -1,4 +1,4 @@
-import bisect
+from bisect import bisect_left, bisect_right
 import sys
 
 input = sys.stdin.readline
@@ -12,8 +12,8 @@ def solve():
     dots.sort()
 
     for x, y in lines:
-        upper = bisect.bisect_right(dots, y)
-        lower = bisect.bisect_left(dots, x)
+        upper = bisect_right(dots, y)
+        lower = bisect_left(dots, x)
 
         print(f"{upper-lower}\n")
 
