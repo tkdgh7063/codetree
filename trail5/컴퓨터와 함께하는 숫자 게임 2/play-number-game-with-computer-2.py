@@ -8,15 +8,15 @@ def get_count(arr, target):
 
     left = 0
     right = N - 1
-    count = 1
+    count = 0
 
     while left <= right:
         mid = (left + right) // 2
+        count += 1
 
         if arr[mid] == target:
             return count
 
-        count += 1
         if arr[mid] < target:
             left = mid + 1
         else:
