@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def get_first(nums, target):
     N = len(nums)
@@ -18,7 +18,10 @@ def get_first(nums, target):
             min_idx = min(mid, min_idx)
             right = mid - 1
 
-    return min_idx + 1 if min_idx != N and nums[min_idx] == target else -1
+    if min_idx != N and nums[min_idx] == target:
+        return min_idx + 1
+    else:
+        return -1
 
 def solve():
     N, M = map(int, input().split())
@@ -27,7 +30,7 @@ def solve():
 
     for query in queries:
         idx = get_first(nums, query)
-        print(idx)
+        print(f"{idx}\n")
 
 if __name__ == "__main__":
     solve()
