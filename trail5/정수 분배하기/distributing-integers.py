@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def is_possible(arr, K, M):
     if K == 0:
@@ -34,4 +34,4 @@ def solve():
 
 if __name__ == "__main__":
     answer = solve()
-    print(answer)
+    print(str(answer) + '\n')
