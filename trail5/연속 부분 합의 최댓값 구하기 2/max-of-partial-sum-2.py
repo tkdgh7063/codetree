@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -16,7 +16,7 @@ def solve():
         if sum_val < 0:
             sum_val = 0
 
-    print(answer)
+    print(str(answer) + "\n")
     return
 
 if __name__ == "__main__":
