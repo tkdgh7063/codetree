@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.read
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     input_data = input().split()
@@ -11,12 +11,14 @@ def solve():
 
     answer = 0
     idx = N - 1
-    while K > 0:
-        answer += K // coins[idx]
-        K %= coins[idx]
-        idx -= 1
+    for coin in coins[::-1]:
+        answer += K // coin
+        K %= coin
 
-    print(answer)
+        if K <= 0:
+            break
+
+    print(str(answer) + "\n")
     return
 
 if __name__ == "__main__":
