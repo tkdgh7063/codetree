@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -29,7 +29,7 @@ def solve():
         else:
             left = mid + 1
 
-    print(answer)
+    print(str(answer) + "\n")
 
 if __name__ == "__main__":
     solve()
