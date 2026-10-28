@@ -14,14 +14,14 @@ def solve():
 
     # 숫자 X를 골랐을 때 해당 X가 몇번째인가?
     left = 1
-    right = int(10e9)
-    answer = int(10e9)
+    right = 10 ** 10
+    answer = 0
     while left <= right:
         mid = (left + right) // 2
 
         seq = get_seq(mid)
         if seq >= N:
-            answer = min(answer, mid)
+            answer = mid
             right = mid - 1
         else:
             left = mid + 1
