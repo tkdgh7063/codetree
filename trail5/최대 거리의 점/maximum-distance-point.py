@@ -17,14 +17,11 @@ def solve():
     def is_possible(dist):
         cnt = 1
 
-        i, j = 0, 1
-        while i < N:
-            while j < N and dots[j] - dots[i] < dist:
-                j += 1
-
-            if j != N:
+        last_idx = 0
+        for i in range(1, N):
+            if dots[i] - dots[last_idx] >= dist:
                 cnt += 1
-            i = j
+                last_idx = i
 
         return cnt >= M
 
