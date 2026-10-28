@@ -10,7 +10,8 @@ def solve():
     def get_seq(num):
         seq = 0
 
-        for i in range(1, N + 1):
+        limit = min(N, num)
+        for i in range(1, limit + 1):
             seq += min(N, num // i)
 
         return seq
