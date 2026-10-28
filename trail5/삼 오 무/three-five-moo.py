@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def get_seq(N):
     # N이 적히는 순서
@@ -30,4 +30,4 @@ def solve():
 
 if __name__ == "__main__":
     answer = solve()
-    print(answer)
+    print(str(answer) + '\n')
