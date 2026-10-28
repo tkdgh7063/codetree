@@ -1,6 +1,6 @@
 import sys
 
-input = sys.stdin.readline
+input = sys.stdin.read
 print = sys.stdout.write
 
 def is_possible(arr, K, M):
@@ -14,11 +14,16 @@ def is_possible(arr, K, M):
     return cnt >= M
 
 def solve():
-    N, M = map(int, input().split())
-    nums = list(int(input()) for _ in range(N))
+    input_data = input().split()
+    if not input_data:
+        return
+
+    N = int(input_data[0])
+    M = int(input_data[1])
+    nums = [int(x) for x in input_data[2:]]
 
     # 특정 수 K를 정하여 각 수를 K로 나눈 몫의 총합이 M 이상인지 체크
-    left = 0
+    left = 1
     right = max(nums)
     K = 0
     while left <= right:
@@ -30,8 +35,7 @@ def solve():
         else:
             right = mid - 1
 
-    return K
+    print(str(K) + '\n')
 
 if __name__ == "__main__":
-    answer = solve()
-    print(str(answer) + '\n')
+    solve()
