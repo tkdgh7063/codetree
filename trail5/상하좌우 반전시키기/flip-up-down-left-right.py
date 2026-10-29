@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -20,13 +20,13 @@ def solve():
                     nx = row_idx + dx
                     ny = col_idx + dy
                     if 0 <= nx < N and 0 <= ny < N:
-                        grid[nx][ny] = abs(grid[nx][ny] - 1)
-                grid[row_idx][col_idx] = abs(grid[row_idx][col_idx] - 1)
+                        grid[nx][ny] ^= 1
+                grid[row_idx][col_idx] ^= 1
 
-    if sum(sum(row) for row in grid) != N * N:
-        print("-1")
+    if 0 in grid[N - 1]:
+        print("-1\n")
     else:
-        print(answer)
+        print(str(answer) + "\n")
 
     return
 
