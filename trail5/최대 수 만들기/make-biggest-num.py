@@ -24,7 +24,7 @@ def solve():
     nums.sort(key=lambda x: (x * MAX_LENGTH), reverse=True)
 
     answer = "".join(nums)
-    print("0" if answer[0] == '0' else answer)
+    print(answer)
 
     return
 
