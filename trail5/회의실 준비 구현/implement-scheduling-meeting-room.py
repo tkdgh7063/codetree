@@ -7,7 +7,7 @@ def solve():
     N = int(input())
     meetings = [tuple(map(int, input().split())) for _ in range(N)]
 
-    meetings.sort(key=lambda x: x[1])
+    meetings.sort(key=lambda x: (x[1], x[0]))
 
     current_time = 0
     answer = 0
