@@ -17,9 +17,11 @@ def solve():
 
     N = int(input_data[0])
     nums = input_data[1:]
+    MAX_LENGTH = 10
 
     # nums 정렬
-    nums.sort(key=cmp_to_key(compare))
+    # nums.sort(key=cmp_to_key(compare))
+    nums.sort(key=lambda x: (x * MAX_LENGTH), reverse=True)
 
     answer = "".join(nums)
     print("0" if answer[0] == '0' else answer)
