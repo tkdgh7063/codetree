@@ -21,7 +21,8 @@ def solve():
     # nums 정렬
     nums.sort(key=cmp_to_key(compare))
 
-    print("".join(nums))
+    answer = "".join(nums)
+    print("0" if answer[0] == '0' else answer)
 
     return
 
