@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     n = int(input())
@@ -20,7 +20,7 @@ def solve():
                 else:
                     before[j] = "G"
 
-    print(answer)
+    print(str(answer) + "\n")
 
     return
 
