@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -14,9 +14,9 @@ def solve():
         dp[i] = dp[i - 2] + dp[i - 3]
 
     if dp[N] != 0:
-        print(dp[N] % 10007)
+        print(str(dp[N] % 10007) + "\n")
     else:
-        print(0)
+        print("0")
 
     return
 
