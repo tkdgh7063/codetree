@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -18,7 +18,7 @@ def solve():
         for j in range(1, N):
             dp[i][j] = min(max(dp[i - 1][j], dp[i][j - 1]), grid[i][j])
 
-    print(dp[-1][-1])
+    print(str(dp[-1][-1]) + "\n")
 
     return
 
