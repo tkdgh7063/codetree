@@ -1,0 +1,26 @@
+import sys
+
+input = sys.stdin.readline
+# print = sys.stdout.write
+
+def solve():
+    N = int(input())
+    grid = [list(map(int, input().split())) for _ in range(N)]
+
+    dp = [[None] * N for _ in range(N)]
+    dp[0][0] = grid[0][0]
+    for i in range(1, N):
+        dp[i][0] = min(dp[i - 1][0], grid[i][0])
+        dp[0][i] = min(dp[0][i - 1], grid[0][i])
+
+    # 오른쪽, 아래 칸으로 이동
+    for i in range(1, N):
+        for j in range(1, N):
+            dp[i][j] = min(max(dp[i - 1][j], dp[i][j - 1]), grid[i][j])
+
+    print(dp[-1][-1])
+
+    return
+
+if __name__ == "__main__":
+    solve()
