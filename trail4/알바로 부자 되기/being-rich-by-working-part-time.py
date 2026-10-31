@@ -7,8 +7,6 @@ def solve():
     N = int(input())
     info = [tuple(map(int, input().split())) for _ in range(N)]  # 시작, 끝, 금액
 
-    info.sort(key=lambda x: x[1])
-
     dp = [x[2] for x in info]
 
     for i in range(1, N):
