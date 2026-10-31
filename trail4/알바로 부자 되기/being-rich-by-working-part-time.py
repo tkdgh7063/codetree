@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -14,7 +14,7 @@ def solve():
             if info[j][1] < info[i][0]:
                 dp[i] = max(dp[i], dp[j] + info[i][2])
 
-    print(max(dp))
+    print(str(max(dp)) + "\n")
 
     return
 
