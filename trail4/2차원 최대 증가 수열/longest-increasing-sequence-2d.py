@@ -33,13 +33,7 @@ def solve():
                             dp[i][j] = candidate
 
     # 최대 이동 칸 출력
-    answer = -float('inf')
-    for row in dp:
-        for num in row:
-            if num == None:
-                continue
-            answer = max(num, answer)
-
+    answer = max((num for row in dp for num in row if num is not None), default=1)
     print(answer)
 
     return
