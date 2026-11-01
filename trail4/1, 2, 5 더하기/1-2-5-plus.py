@@ -1,7 +1,9 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
+
+MOD = 10_007
 
 def solve():
     N = int(input())
@@ -22,7 +24,8 @@ def solve():
             else:
                 dp[i] += candidate
 
-    print(dp[N] % 10007)
+    answer = dp[N] % MOD
+    print(str(answer) + "\n")
 
     return
 
