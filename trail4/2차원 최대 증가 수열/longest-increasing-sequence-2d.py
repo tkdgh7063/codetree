@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N, M = map(int, input().split())
@@ -34,7 +34,7 @@ def solve():
 
     # 최대 이동 칸 출력
     answer = max((num for row in dp for num in row if num is not None), default=1)
-    print(answer)
+    print(str(answer) + "\n")
 
     return
 
