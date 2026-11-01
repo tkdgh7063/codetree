@@ -29,7 +29,8 @@ def solve():
                 dp[money] = candidate
 
 
-    print(str(dp[M]) if dp[M] != None else "-1")
+    answer = dp[M] if dp[M] is not None else -1
+    print(str(answer) + "\n")
 
     return
 
