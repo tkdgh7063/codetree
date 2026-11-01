@@ -13,13 +13,21 @@ def solve():
 
     for money in range(1, M + 1):
         for coin in coins:
+            # 현재 돈보다 동전이 크면 패스
+            if money < coin:
+                continue
+
             prev = money - coin
-            if money >= coin:
-                if dp[prev] is not None:
-                    if dp[money] is None:
-                        dp[money] = dp[prev] + 1
-                    else:
-                        dp[money] = min(dp[prev] + 1, dp[money])
+
+            # 이전 금액을 만들 수 없으면 패스
+            if dp[prev] is None:
+                continue
+
+            candidate = dp[prev] + 1
+
+            if dp[money] is None or candidate < dp[money]:
+                dp[money] = candidate
+
 
     print(str(dp[M]) if dp[M] != None else "-1")
 
