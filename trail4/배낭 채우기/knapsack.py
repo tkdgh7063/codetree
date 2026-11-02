@@ -24,7 +24,7 @@ def solve():
             if dp[m] is None or dp[m] < candidate:
                 dp[m] = candidate
 
-    answer = max([value for value in dp if value is not None])
+    answer = max((value for value in dp if value is not None), default=0)
     print(str(answer) + "\n")
 
     return
