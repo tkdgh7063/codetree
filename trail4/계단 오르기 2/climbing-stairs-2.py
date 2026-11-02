@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -26,7 +26,7 @@ def solve():
                     dp[i][j] = max(dp[i - 2][j] + coins[i - 1], dp[i][j])
 
     answer = max(dp[-1])
-    print(answer)
+    print(str(answer))
 
     return
 
