@@ -26,7 +26,7 @@ def solve():
                     dp[i][j] = max(dp[i - 2][j] + coins[i - 1], dp[i][j])
 
     answer = max(dp[-1])
-    print(str(answer))
+    print(str(answer) + "\n")
 
     return
 
