@@ -1,7 +1,7 @@
 import sys
 
 input = sys.stdin.readline
-# print = sys.stdout.write
+print = sys.stdout.write
 
 def solve():
     N = int(input())
@@ -13,7 +13,7 @@ def solve():
     for i in range(1, N):
         dp[i] = max(dp[i - 1] + nums[i], nums[i])
 
-    print(max(dp))
+    print(str(max(dp)) + "\n")
 
     return
 
