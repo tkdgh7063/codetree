@@ -31,7 +31,7 @@ def solve():
                     score = abs(v1 - v2)
                     dp[i][j] = max(dp[i][j], dp[i - 1][k] + score)
 
-    answer = max(a for row in dp for a in row)
+    answer = max(dp[M - 1])
     print(str(answer) + "\n")
 
     return
