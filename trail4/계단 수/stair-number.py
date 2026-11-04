@@ -26,9 +26,9 @@ def solve():
                 if abs(j - k) == 1:
                     # 수 차이가 1
                     if dp[i][j] == -1:
-                        dp[i][j] = dp[i - 1][k]
+                        dp[i][j] = dp[i - 1][k] % MOD
                     else:
-                        dp[i][j] += dp[i - 1][k]
+                        dp[i][j] += dp[i - 1][k] % MOD
 
     answer = sum(num for num in dp[-1] if num != -1) % MOD
     print(str(answer) + "\n")
