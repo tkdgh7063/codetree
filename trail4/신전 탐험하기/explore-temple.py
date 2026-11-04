@@ -9,25 +9,23 @@ def solve():
 
     # 각 층에서 하나의 방에서 보물을 획득 가능
     # 같은 방향의 방을 연속해서 선택 불가
-    dp = [[-1] * 3 for _ in range(N + 1)]
+
+    # dp[i][j] = i번째 층에서 j번 방을 골랐을 때의 최대 보물 개수
+    dp = [[0] * 3 for _ in range(N)]
 
     # 1층은 보물 개수 그대로
     for i in range(3):
-        dp[1][i] = treasures[0][i]
+        dp[0][i] = treasures[0][i]
 
     # 2층부터 N층까지
-    for i in range(2, N + 1):
-        for j in range(3):
-            for k in range(3):
-                # j는 지금 선택한 방향
-                # k는 이전에 선택한 방향
-                if dp[i - 1][k] == -1:
-                    continue
+    for i in range(1, N):
+        dp[i][0] = treasures[i][0] + max(dp[i - 1][1], dp[i - 1][2])
 
-                if j != k:
-                    dp[i][j] = max(dp[i][j], dp[i - 1][k] + treasures[i - 1][j])
+        dp[i][1] = treasures[i][1] + max(dp[i - 1][0], dp[i - 1][2])
 
-    answer = max(dp[N])
+        dp[i][2] = treasures[i][2] + max(dp[i - 1][0], dp[i - 1][1])
+
+    answer = max(dp[N - 1])
     print(str(answer) + "\n")
 
     return
