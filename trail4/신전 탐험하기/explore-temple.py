@@ -19,10 +19,13 @@ def solve():
 
     # 2층부터 N층까지
     for i in range(1, N):
+        # 왼쪽 선택
         dp[i][0] = treasures[i][0] + max(dp[i - 1][1], dp[i - 1][2])
 
+        # 가운데 선택
         dp[i][1] = treasures[i][1] + max(dp[i - 1][0], dp[i - 1][2])
 
+        # 오른쪽 선택
         dp[i][2] = treasures[i][2] + max(dp[i - 1][0], dp[i - 1][1])
 
     answer = max(dp[N - 1])
