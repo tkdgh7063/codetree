@@ -8,7 +8,7 @@ def solve():
     treasures = [tuple(map(int, input().split())) for _ in range(N)]
 
     # dp[i][j][k] = 처음에 i번째 방을 선택하고 j층에서 k번째 방을 선택했을 때 보물 최대 개수
-    dp = [[[-1] * 3 for _ in range(N)] for _ in range(3)]
+    dp = [[[0] * 3 for _ in range(N)] for _ in range(3)]
 
     for i in range(3):
         dp[i][0][i] = treasures[0][i]
