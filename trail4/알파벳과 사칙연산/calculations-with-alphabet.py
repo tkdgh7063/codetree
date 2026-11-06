@@ -1,5 +1,4 @@
 import sys
-sys.setrecursionlimit(10 ** 9)
 
 input = sys.stdin.readline
 
@@ -13,6 +12,7 @@ def solve():
             char.add(ch)
 
     N = len(char)  # 알파벳 개수
+    char = sorted(char)
 
     def calc(nums):
         # 현재 선택한 숫자들로 식 계산
