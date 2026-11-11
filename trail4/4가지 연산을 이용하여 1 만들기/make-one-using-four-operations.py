@@ -15,14 +15,13 @@ def solve():
 
     def bfs(x):
         queue = deque()
-        count = 0
 
         if x == 1:
-            visited[1] = count
+            visited[1] = 0
             return
 
         queue.append(x)
-        visited[x] = count
+        visited[x] = 0
 
         while queue:
             cur = queue.popleft()
