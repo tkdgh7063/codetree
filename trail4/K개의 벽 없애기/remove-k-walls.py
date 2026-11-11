@@ -13,7 +13,7 @@ def solve():
     dxs = [-1, 1, 0, 0]
     dys = [0, 0, -1, 1]
 
-    visited = [[[-1] * N for _ in range(N)] for _ in range(K + 1)]  # 행, 열, 부순 개수
+    visited = [[[-1] * N for _ in range(N)] for _ in range(K + 1)]  # 부순 개수, 행, 열
     def bfs(x, y):
         queue = deque()
         move = 0
